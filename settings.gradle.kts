@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "logana-jetbrains"
+rootProject.name = "logana-integration"
