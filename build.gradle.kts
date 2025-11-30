@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.intellij") version "1.17.3"
 }
 
-group = "com.github.micmine"
+group = "com.github.emilycares"
 version = "1.8"
 
 repositories {

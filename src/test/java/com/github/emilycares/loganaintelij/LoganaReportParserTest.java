@@ -1,6 +1,6 @@
-package com.github.micmine.loganaintelij;
+package com.github.emilycares.loganaintelij;
 
-import com.github.micmine.loganaintelij.model.LoganaMessage;
+import com.github.emilycares.loganaintelij.model.LoganaMessage;
 import org.junit.Test;
 
 import java.nio.file.Path;
@@ -15,8 +15,8 @@ public class LoganaReportParserTest {
     @Test
     public void testParser() {
         List<String> log = List.of(
-                "/home/michael/Documents/rust/logana/src/main.rs:16:5|type annotations needed",
-                "C:\\home\\michael\\Documents\\rust\\logana\\src\\main.rs:16:5|type annotations needed"
+                "/home/emily/Documents/rust/logana/src/main.rs:16:5|type annotations needed",
+                "C:\\home\\emily\\Documents\\rust\\logana\\src\\main.rs:16:5|type annotations needed"
         );
 
         List<LoganaMessage> result = parser.parse(log);
@@ -24,12 +24,12 @@ public class LoganaReportParserTest {
         assertEquals(result, List.of(
                 new LoganaMessage(
                         "type annotations needed",
-                        Path.of("/home/michael/Documents/rust/logana/src/main.rs"),
+                        Path.of("/home/emily/Documents/rust/logana/src/main.rs"),
                         16,
                         5 ),
                 new LoganaMessage(
                         "type annotations needed",
-                        Path.of("C:\\home\\michael\\Documents\\rust\\logana\\src\\main.rs"),
+                        Path.of("C:\\home\\emily\\Documents\\rust\\logana\\src\\main.rs"),
                         16,
                         5)
         ));
@@ -37,7 +37,7 @@ public class LoganaReportParserTest {
     @Test
     public void testParser2() {
         List<String> log = List.of(
-                "/home/michael/test/src/main/java/Generator.java:118:51|';' expected",
+                "/home/emily/test/src/main/java/Generator.java:118:51|';' expected",
                 "",
                 ""
         );
@@ -47,7 +47,7 @@ public class LoganaReportParserTest {
         assertEquals(result, List.of(
                 new LoganaMessage(
                         "';' expected",
-                        Path.of("/home/michael/test/src/main/java/Generator.java"),
+                        Path.of("/home/emily/test/src/main/java/Generator.java"),
                         118,
                         51)
         ));
